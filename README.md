@@ -5,11 +5,12 @@ An end-to-end RevOps and Marketing Operations automation built in **n8n** that i
 >**[Watch the Live Walkthrough](https://www.loom.com/share/444dec4761a04800836e03c7f413ef8b)**
 
 <img width="1710" height="691" alt="image" src="https://github.com/user-attachments/assets/c3875fc9-ca8b-4340-bf0f-a9e95042e0a8" />
+
 ---
 
 ## Business Problem & Impact
 
-Manual inbound lead qualification slows down speed-to-lead, creates inconsistent scoring across reps, and forces SDRs to spend 15–20 minutes researching form fills before sending a first touch communication.
+Manual inbound lead qualification slows down speed-to-lead, creates inconsistent scoring across reps, and forces SDRs to spend 15–20 minutes researching form fills before sending a first-touch communication.
 
 | Metric / Process | Manual Sales Process | Automated AI RevOps Pipeline |
 | :--- | :--- | :--- |
@@ -29,7 +30,7 @@ flowchart LR
     C --> D[JavaScript Code Node<br>Sanitize & Parse JSON]
     D --> E[HubSpot CRM<br>Create or Update Contact]
     E --> F{Lead Score Tier?}
-    F -- "Tier 1: score greater 80" --> G[Gmail Alert<br>Instant Sales Notification + Draft]
+    F -- "Tier 1: score 80+" --> G[Gmail Alert<br>Instant Sales Notification + Draft]
     F -- "Tier 2: score between 50–79" --> H[HubSpot Static List: Tier 2<br>Nurture Track]
-    F -- "Tier 3: score below 49" --> I[HubSpot Static List: Tier 3<br>Nurture Track]
+    F -- "Tier 3: score below 50" --> I[HubSpot Static List: Tier 3<br>Nurture Track]
 ```
