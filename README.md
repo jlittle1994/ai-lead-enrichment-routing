@@ -24,12 +24,12 @@ Manual inbound lead qualification slows down speed-to-lead, creates inconsistent
 
 ```mermaid
 flowchart LR
-    A[Inbound Form / Webhook] --> B[Jina.ai Reader API\nScrape Company URL]
-    B --> C[Claude\nICP Scoring & Outreach Draft]
-    C --> D[JavaScript Code Node\nSanitize & Parse JSON]
-    D --> E[HubSpot CRM\nCreate or Update Contact]
-    E --> Switch{If Lead Score >= 80?}
-    F -- True: Tier 1 --> G[Gmail Alert\nInstant Sales Notification + Draft]
-    F -- False: Tier 2/3 --> H[HubSpot Static List Tier 2 / Status\nAutomated Nurture Track]
-    F -- False: Tier 3/3 --> H[HubSpot Static List Tier 3 / Status\nAutomated Nurture Track]
+    A[Inbound Form / Webhook] --> B[Jina.ai Reader API<br>Scrape Company URL]
+    B --> C[Claude<br>ICP Scoring & Outreach Draft]
+    C --> D[JavaScript Code Node<br>Sanitize & Parse JSON]
+    D --> E[HubSpot CRM<br>Create or Update Contact]
+    E --> F{Lead Score Tier?}
+    F -- "Tier 1: score ≥ 80" --> G[Gmail Alert<br>Instant Sales Notification + Draft]
+    F -- "Tier 2: 50–79" --> H[HubSpot Static List: Tier 2<br>Nurture Track]
+    F -- "Tier 3: below 49" --> I[HubSpot Static List: Tier 3<br>Nurture Track]
 ```
