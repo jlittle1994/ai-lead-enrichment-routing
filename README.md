@@ -29,7 +29,7 @@ flowchart LR
     C --> D[JavaScript Code Node<br>Sanitize & Parse JSON]
     D --> E[HubSpot CRM<br>Create or Update Contact]
     E --> F{Lead Score Tier?}
-    F -- "Tier 1: score ≥ 80" --> G[Gmail Alert<br>Instant Sales Notification + Draft]
-    F -- "Tier 2: 50–79" --> H[HubSpot Static List: Tier 2<br>Nurture Track]
-    F -- "Tier 3: below 49" --> I[HubSpot Static List: Tier 3<br>Nurture Track]
+    F -- "Tier 1: score greater 80" --> G[Gmail Alert<br>Instant Sales Notification + Draft]
+    F -- "Tier 2: score between 50–79" --> H[HubSpot Static List: Tier 2<br>Nurture Track]
+    F -- "Tier 3: score below 49" --> I[HubSpot Static List: Tier 3<br>Nurture Track]
 ```
